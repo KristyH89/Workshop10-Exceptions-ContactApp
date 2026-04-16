@@ -66,7 +66,7 @@ You can find the workshop description here:
 
 3. Run the CLI:
    ```bash
-    java -cp 
+    java -cp target/java-exception-workshop-1.0.jar
     ```
 
 ---
