@@ -1,0 +1,5 @@
+Alice Andersson,0701234567
+Bob Johansson,0739876543
+Charlie Svensson,0765551122
+Diana Karlsson,0708889991
+Erik Nilsson,0724443322
