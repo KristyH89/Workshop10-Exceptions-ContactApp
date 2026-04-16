@@ -1,22 +1,63 @@
 # 📇 Workshop : Contact App
 
-A **Java console application** to Manage Contact Using MVC Architecture
+A **Java console-based Contact Management System** built using **MVC architecture**, **file persistence**, and **exception handling**.
 
 ---
 
 ## 📝 Table of Contents
 
-1. [✨ Features](#-features)
-2. [📂 Folder Structure](#-folder-structure)
-3. [🛠 Available Options](#-available-options)
-4. [🗃 Data Structure](#-data-structure)
-5. [✅ Input Validation](#-input-validation)
-6. [🧪 JUnit Testing](#-junit-testing)
-7. [🚀 How to Run](#-how-to-run)
-8. [⚡ Expected Output :](#-expected-output-)
-9. [📌 Workshop Document](#-workshop-document)
+1. [🧠 MVC Design Pattern](#-mvc-design-pattern)
+2. [✨ Features](#-features)
+3. [📂 Folder Structure](#-folder-structure)
+4. [🛠 Available Options](#-available-options)
+5. [🗃 Data Structure](#-data-structure)
+6. [✅ Input Validation](#-input-validation)
+7. [🧪 JUnit Testing](#-junit-testing)
+8. [🚀 How to Run](#-how-to-run)
+9. [⚡ Expected Output :](#-expected-output-)
+10. [📌 Workshop Document](#-workshop-document)
 ---
 
+## 🧠 MVC Design Pattern
+
+The project follows MVC (Model-View-Controller) architecture:
+
+### 🧠 Model
+- Represents data + validation
+- Example: Contact
+
+### 🖥 View
+- Handles input/output
+- Example: ContactView
+- Shows menus and messages
+
+### 🎮 Controller
+- Connects Model and View
+- Handles application logic
+- Manages exception flow
+
+### 🔄 Flow Diagram
+```text
+👤 User
+↓
+🖥 View
+↓
+🎮 Controller
+↓
+🧠 Model
+↓
+💾 File Storage (DAO)
+↑
+⚠ ExceptionHandler
+```
+
+### 🎯 Benefits of MVC
+- Clean separation of responsibilities
+- Easier debugging
+- Easy to extend features
+- Better testability
+
+---
 ## 📌 Workshop Document
 
 You can find the workshop description here:
@@ -32,27 +73,109 @@ You can find the workshop description here:
 
 ## 📂 Folder Structure
 
-```
+```text
+contact-app-workshop/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── se/lexicon/
+│   │   │       ├── Main.java
+│   │   │       ├── model/
+│   │   │       │    └── Contact.java
+│   │   │       ├── data/
+│   │   │       │    ├── ContactDAO.java
+│   │   │       │    └── FileContactDAOImpl.java
+│   │   │       ├── view/
+│   │   │       │    └── ContactView.java
+│   │   │       ├── controller/
+│   │   │       │    └── ContactController.java
+│   │   │       └── exception/
+│   │   │            ├── ContactStorageException.java
+│   │   │            ├── DuplicateContactException.java
+│   │   │            └── ExceptionHandler.java
+│   │   └── resources/
+│   │        └── contacts.txt
+│   │
+│   └── test/java/se/lexicon/
+│   ├── data/
+│   │   └── FileContactDAOImpl.java
+│   └── model/
+│       └── ContactTest.java
+├── pom.xml
+└── README.md
 
 ```
 ---
 ## 🛠 Available Options
 
+📇 Manage contacts efficiently in a console application:
 
+- ➕ Add new contact
+- 📋 View all contacts
+- 🔍 Search contact by name
+- 💾 File-based persistence (contacts.txt)
+- 🚫 Duplicate contact prevention
+- ✅ Input validation using regex
+- ⚠️ Custom exception handling
+- 🏗 Clean MVC architecture
 
 
 ---
 ## 🗃 Data Structure
 
+Each contact is stored in ```contacts.txt ```:
 
+```java 
+String name;
+String phoneNumber;
+```
+Example:
+```text
+Alice,0701234567
+Bob,0739876543
+Charlie,0761112233
+```
 ---
 
 ## ✅ Input Validation
+
+👤 Name
+- Cannot be empty
+- Cannot be null
+
+📞 Phone Number
+- Must be exactly 10 digits
+- Regex validation:
+```text
+^\\d{10}$
+```
+❌ Invalid input throws:
+- IllegalArgumentException
 
 ---
 
 ## 🧪 JUnit Testing
 
+✅ ```ContactTest.java```
+
+Tests:
+
+- Valid contact creation
+- Empty name validation
+- Invalid phone number validation
+- Non-numeric phone number rejection
+
+✅ ```FileContactDAOImplTest.java```
+
+Tests:
+
+- Save contacts successfully
+- Retrieve all contacts
+- Find contact by name
+- Return null when contact does not exist
+- Prevent duplicate contacts
+- Auto-create storage file
 
 ---
 ## 🚀 How to Run
@@ -66,7 +189,7 @@ You can find the workshop description here:
 
 3. Run the CLI:
    ```bash
-    java -cp target/java-exception-workshop-1.0.jar
+    java -cp target/contact-app-workshop-1.0.jar
     ```
 
 ---

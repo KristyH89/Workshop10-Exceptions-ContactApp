@@ -1,16 +1,16 @@
-package controller;
+package se.lexicon.controller;
 
-import data.ContactDAO;
-import model.Contact;
-import view.ContactView;
-import exception.*;
+import se.lexicon.data.ContactDAO;
+import se.lexicon.model.Contact;
+import se.lexicon.view.ContactView;
+import se.lexicon.exception.ExceptionHandler;
 
 import java.util.List;
 
 public class ContactController {
 
-    private ContactDAO contactDAO;
-    private ContactView contactView;
+    private final ContactDAO contactDAO;
+    private final ContactView contactView;
 
     public ContactController(ContactDAO contactDAO, ContactView contactView) {
         this.contactDAO = contactDAO;
@@ -23,7 +23,7 @@ public class ContactController {
 
         while (running) {
             contactView.displayMenu();
-            String choice = contactView.getUserImput("Choose option");
+            String choice = contactView.getUserInput("Choose option");
 
             try {
                 switch (choice) {
@@ -41,7 +41,6 @@ public class ContactController {
                         break;
                     default:
                         contactView.displayMessage("Invalid choice");
-
                 }
             } catch (Exception e) {
                 ExceptionHandler.handle(e, contactView);
@@ -58,10 +57,9 @@ public class ContactController {
         contactDAO.save(contact);
 
         contactView.displayMessage("Contact added!");
-
     }
 
-    private void viewAllCOntacts() throws Exception {
+    private void viewAllContacts() throws Exception {
         List<Contact> contacts = contactDAO.findAll();
 
         if (contacts.isEmpty()) {
