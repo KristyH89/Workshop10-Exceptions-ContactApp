@@ -8,7 +8,7 @@ import java.nio.file.Path;
 
 public class Main {
 
-    public static void main(String[] args) {
+    static void main() {
 
         try {
             FileContactDAOImpl dao = new FileContactDAOImpl(Path.of("contacts.txt"));
