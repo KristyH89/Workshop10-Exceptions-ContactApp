@@ -1,5 +1,5 @@
 package se.lexicon.exception;
-import view.ContactView;
+import se.lexicon.view.ContactView;
 
 public class ExceptionHandler {
 

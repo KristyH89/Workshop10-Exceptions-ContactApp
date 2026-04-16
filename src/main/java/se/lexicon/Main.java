@@ -1,21 +1,24 @@
 package se.lexicon;
 
-import controller.ContactController;
-import data.FileCOntactDAOImpl;
-import view.ContactView;
+import se.lexicon.controller.ContactController;
+import se.lexicon.data.FileContactDAOImpl;
+import se.lexicon.view.ContactView;
 
 import java.nio.file.Path;
 
 public class Main {
-    static <FileContactDAOImpl> void main(String[] args) {
 
-        FileContactDAOImpl dao = new FIleCOntactDAOImpl(Path.of("contacts.txt"));
-        ContactView view = new ContactView();
+    public static void main(String[] args) {
 
-        ContactController controller = new ContactController(dao, view);
-        controller.run();
+        try {
+            FileContactDAOImpl dao = new FileContactDAOImpl(Path.of("contacts.txt"));
+            ContactView view = new ContactView();
+
+            ContactController controller = new ContactController(dao, view);
+            controller.run();
+
+        } catch (Exception e) {
+            System.out.println("Fatal error: " + e.getMessage());
+        }
     }
-
 }
-
-// I have to check everyhing as a whole.
