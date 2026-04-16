@@ -1,10 +1,6 @@
 package se.lexicon.exception;
 
-public class ContactStorageException extends RuntimeException {
-
-    public ContactStorageException() {
-        super();
-    }
+public class ContactStorageException extends Exception {
 
     public ContactStorageException(String message) {
         super(message);
@@ -12,9 +8,5 @@ public class ContactStorageException extends RuntimeException {
 
     public ContactStorageException(String message, Throwable cause) {
         super(message, cause);
-    }
-
-    public ContactStorageException(Throwable cause) {
-        super(cause);
     }
 }
