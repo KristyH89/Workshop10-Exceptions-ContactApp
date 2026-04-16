@@ -23,7 +23,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.contactapp</mainClass>
+                            <mainClass>se.lexicon.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
