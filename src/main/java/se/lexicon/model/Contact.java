@@ -1,7 +1,5 @@
 package se.lexicon.model;
 
-import java.util.Objects;
-
 public class Contact {
 
     private String name;
@@ -17,6 +15,7 @@ public class Contact {
 
         this.name = name;
         this.phoneNumber = phoneNumber;
+
     }
 
     public String getName() {
