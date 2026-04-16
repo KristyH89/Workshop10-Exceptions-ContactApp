@@ -6,16 +6,8 @@ public class Contact {
     private String phoneNumber;
 
     public Contact(String name, String phoneNumber) {
-        if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException("Name cannot be empty");
-        }
-        if (phoneNumber == null || phoneNumber.isBlank()) {
-            throw new IllegalArgumentException("Phone number cannot be empty");
-        }
-
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-
+        setName(name);
+        setPhoneNumber(phoneNumber);
     }
 
     public String getName() {
@@ -26,11 +18,22 @@ public class Contact {
         return phoneNumber;
     }
 
+    public void setName(String name) {
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("Name cannot be empty");
+        }
+        this.name = name.trim();
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        if (phoneNumber == null || !phoneNumber.matches("^\\d{10}$")) {
+            throw new IllegalArgumentException("Phone must be exactly 10 digits");
+        }
+        this.phoneNumber = phoneNumber;
+    }
+
     @Override
     public String toString() {
-        return "Contact{" +
-                "name='" + name + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
+        return name + "," + phoneNumber;
     }
 }
