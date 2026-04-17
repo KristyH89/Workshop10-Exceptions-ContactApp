@@ -21,11 +21,10 @@ public class ContactView {
 
     /// Displays the main navigation menu.
     public void displayMenu() {
-        System.out.println();
-        System.out.println("=== Contact App ===");
-        System.out.println("1. List all contacts");
-        System.out.println("2. Add a new contact");
-        System.out.println("3. Find contact by name");
+        System.out.println("\n=== Contact App ===");
+        System.out.println("1. Add Contact");
+        System.out.println("2. View All Contacts");
+        System.out.println("3. Find Contact by Name");
         System.out.println("0. Exit");
         System.out.println("-------------------");
     }
