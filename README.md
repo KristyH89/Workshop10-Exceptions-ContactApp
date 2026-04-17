@@ -1,3 +1,4 @@
+![Java](https://img.shields.io/badge/Java-25.0.2-blue)
 # 📇 Workshop : Contact App
 
 A **Java console-based Contact Management System** built using **MVC architecture**, **file persistence**, and **exception handling**.
@@ -67,7 +68,13 @@ You can find the workshop description here:
 ---
 ## ✨ Features
 
+📇 This Contact App provides a simple but structured contact management system using Java and MVC architecture.
 
+### 🧠 Core Functionality
+- ➕ Add new contacts with name and phone number
+- 📋 View all saved contacts from file storage
+- 🔍 Search for a contact by name
+- 🚪 Exit the application safely
 
 ---
 
@@ -197,6 +204,29 @@ Tests:
 ## ⚡ Expected Output :
 
 ```
+=== Contact App ===
+1. Add Contact
+2. View All Contacts
+3. Find Contact by Name
+0. Exit
+-------------------
+Choose option 1
+Enter name Alice
+Enter phone (10 digits) 0701234567
+Contact added!
+
+=== Contact App ===
+1. Add Contact
+2. View All Contacts
+3. Find Contact by Name
+0. Exit
+-------------------
+Choose option
+-------------------
+Choose option 1
+Enter name Bob
+Enter phone (10 digits) 9876543
+[!] Phone must be exactly 10 digits
 
 ```
 
