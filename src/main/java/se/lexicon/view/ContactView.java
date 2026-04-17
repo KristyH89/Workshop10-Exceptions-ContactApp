@@ -11,7 +11,7 @@ public class ContactView {
     private final Scanner scanner = new Scanner(System.in);
 
     /// Displays a prompt and returns the user's trimmed input.
-    ///
+
     /// @param prompt the message to display before waiting for input
     /// @return the trimmed string entered by the user
     public String getUserInput(String prompt) {
